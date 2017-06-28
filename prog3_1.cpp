@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	L = luaL_newstate();
 	luaL_openlibs(L);
 	int status = 0;
-	status = luaL_dofile(L, "test.lua");
+	status = luaL_dofile(L, argv[1]);
 	if(status == 1)
 		cout << "errors" << endl;
 	else
