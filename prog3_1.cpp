@@ -11,9 +11,8 @@ extern "C" {
 }
 
 
-using namespace std;
-//Creates the lua state that this program will be using
-lua_State *L;
+using namespace std; // The namespace used in this program
+lua_State *L; //Creates the lua state that this program will be using
 
 int main(int argc, char *argv[])
 {
@@ -21,21 +20,13 @@ int main(int argc, char *argv[])
 	//Assignment header
 	cout << "Assignment #3-1, Jose Carlos Gomez, JoseCarlosGomez69@gmail.com" << endl;
 
-	// Assigns the lua state to the name L
-	L = luaL_newstate();
-	//Open lua libraries in the lua state L
-	luaL_openlibs(L);
+	
+	L = luaL_newstate(); // Assigns the lua state to the name L
+	luaL_openlibs(L); //Open lua libraries in the lua state L
+	
+	luaL_dofile(L, argv[1]); // Execute the lua file entered in as a command line argument
 
-	// Execute the lua file entered in as a command line argument
-	luaL_dofile(L, argv[1]);
-
-	// Get the size of the stack between C and Lua
-	//int stackSize = lua_gettop(L);
-	// Pop off everything from the stack
-	//lua_pop(L, stackSize);
-
-	//Close the Lua environment
-	lua_close(L);
+	lua_close(L); //Close the Lua environment
 
 	return 0;
 }
