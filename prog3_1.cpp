@@ -5,12 +5,11 @@
 #include <string>
 #include <lua.hpp>
 
-//lua.hpp:
-//extern "C" {
+extern "C" {
 #include "lua.h"
 #include "lauxlib.h"
 #include "lualib.h"
-//}
+}
 
 
 using namespace std;
@@ -25,7 +24,8 @@ int main(int argc, char *argv[])
 	if(argc > 1){
 		fileName = argv[1];
 	}
-
+	cout << argv[0] << endl;
+	cout << argv[1] << endl;
 
 	L = luaL_newstate();
 	luaL_openlibs(L);
