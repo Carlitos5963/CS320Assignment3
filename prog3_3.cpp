@@ -47,13 +47,13 @@ double InfixToPostfix(const char* str){
 	double z;
 
 	lua_getglobal(L, "InfixToPostfix");
-	lua_pushstring(L, str);
+	lua_pushstring(L, str); // Push string parameter to Lua function
 	
-	//if(lua_pcall(L, 1, 1, 0) != 0)
+	//if(luaL_pcall(L, 1, 1, 0) != 0)
 	//	error(L, "Error running InfixToPostfix: %s", lua_tostring(L, -1));
 	lua_call(L, 1, 1);
 
-	z = lua_tonumber(L, -1);
+	z = (double)lua_tonumber(L, -1);
 	lua_pop(L, 1);
 	return z;
 
