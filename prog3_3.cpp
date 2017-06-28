@@ -48,9 +48,9 @@ const char* InfixToPostfix(const char* str) {
 	char infix[256];
 
 	sprintf(infix, "return InfixToPostfix('%s')", str);
-	luaL_dostring(L, infix);
+	cout << luaL_dostring(L, infix);
 
-	cout << infix << endl;
+	//cout << infix << endl;
 
 	z = lua_tostring(L, 1);
 	lua_pop(L, 1);
