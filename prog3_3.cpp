@@ -22,11 +22,12 @@ int main(int argc, char *argv[])
 	cout << "Assignment #3-3, Jose Carlos Gomez, JoseCarlosGomez69@gmail.com" << endl;
 
 	string str = "";
+	char buff[256];
 	for(int i = 2; i < argc; i++){
-		strcat(str, argv[i]);
+		strcat(buff, argv[i]);
 	}
 
-	cout << str << endl;
+	cout << buff << endl;
 
 	L = luaL_newstate(); // Assigns the lua state to the name L
 	luaL_openlibs(L); //Open lua libraries in the lua state L
