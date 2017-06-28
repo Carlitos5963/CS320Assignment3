@@ -29,12 +29,12 @@ int main(int argc, char *argv[])
 
 	L = luaL_newstate();
 	luaL_openlibs(L);
-	int status = 1;
+	int status = 0;
 	status = luaL_dofile(L, "test.lua");
-	if(status = 0)
-		cout << "nothing opened" << endl;
+	if(status == 1)
+		cout << "errors" << endl;
 	else
-		cout << "something happened" << endl;
+		cout << "success" << endl;
 
 	int stackSize = lua_gettop(L);
 	lua_pop(L, stackSize);
