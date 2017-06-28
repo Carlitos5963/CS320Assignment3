@@ -29,7 +29,8 @@ int main(int argc, char *argv[])
 
 	L = luaL_newstate();
 	luaL_openlibs(L);
-	int status = luaL_dofile(L, "test.lua");
+	int status = 1;
+	status = luaL_dofile(L, "test.lua");
 	if(status = 0)
 		cout << "nothing opened" << endl;
 	else
