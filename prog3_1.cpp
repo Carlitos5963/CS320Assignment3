@@ -2,7 +2,6 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
-#include <string>
 #include <lua.hpp>
 
 extern "C" {
@@ -12,35 +11,30 @@ extern "C" {
 }
 
 
-using namespace std;
+//using namespace std;
+//Creates the lua state that this program will be using
 lua_State *L;
 
 int main(int argc, char *argv[])
 {
 
+	//Assignment header
 	cout << "Assignment #3-1, Jose Carlos Gomez, JoseCarlosGomez69@gmail.com" << endl;
-	string fileName;
-	
-	//if(argc > 1){
-	//	fileName = argv[1];
-	//}
-	//cout << argv[0] << endl;
-	//cout << argv[1] << endl;
 
+	// Assigns the lua state to the name L
 	L = luaL_newstate();
+	//Open lua libraries in the lua state L
 	luaL_openlibs(L);
-	//int status = 0;
+
+	// Execute the lua file entered in as a command line argument
 	luaL_dofile(L, argv[1]);
-	//if(status == 1)
-	//	cout << "errors" << endl;
-	//else
-	//	cout << "success" << endl;
 
-	int stackSize = lua_gettop(L);
-	lua_pop(L, stackSize);
+	// Get the size of the stack between C and Lua
+	//int stackSize = lua_gettop(L);
+	// Pop off everything from the stack
+	//lua_pop(L, stackSize);
 
-	//lua_pcall(L, 0, LUA_MULTRET, 0);
-
+	//Close the Lua environment
 	lua_close(L);
 
 	return 0;
