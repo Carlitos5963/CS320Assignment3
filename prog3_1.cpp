@@ -11,7 +11,7 @@ extern "C" {
 }
 
 
-//using namespace std;
+using namespace std;
 //Creates the lua state that this program will be using
 lua_State *L;
 
