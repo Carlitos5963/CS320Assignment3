@@ -23,9 +23,10 @@ int main(int argc, char *argv[])
 
 	string str = "";
 	char buff[256];
-	for(int i = 2; i < argc; i++){
-		strcat(buff, argv[i]);
-	}
+	fgets(buff, 65, stdin); //Takes in no more than 65 chars into the buff array
+	//for(int i = 2; i < argc; i++){
+	//	strcat(buff, argv[i]);
+	//}
 
 	cout << buff << endl;
 
