@@ -47,11 +47,11 @@ double InfixToPostfix(const char* str) {
 	double z;
 	cout << str << endl; // TEST! Used to test input is correct at this point
 
-	luaL_dostring(L, "InfixToPostfix(str)");
+	luaL_dostring(L, "return InfixToPostfix(%s)", str);
 	//lua_pushstring(L, str); // Push string parameter to Lua function
 	
 	//if(luaL_pcall(L, 1, 1, 0) != 0)
-	//	error(L, "Error running InfixToPostfix: %s", lua_tostring(L, -1));
+	//	error(L, "Error running InfixToPostfhix: %s", lua_tostring(L, -1));
 	lua_call(L, 1, 1);
 
 	z = (double)lua_tonumber(L, -1);
