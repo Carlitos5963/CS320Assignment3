@@ -31,6 +31,9 @@ int main(int argc, char *argv[])
 	luaL_openlibs(L);
 	luaL_dofile(L, "test.lua");
 
+	int stackSize = lua_gettop(L);
+	lua_pop(L, stackSize);
+
 	//lua_pcall(L, 0, LUA_MULTRET, 0);
 
 	lua_close(L);
