@@ -14,6 +14,7 @@ extern "C" {
 
 using namespace std; // The namespace used in this program
 lua_State *L; //Creates the lua state that this program will be using
+double InfixToPostfix(const char* str);
 
 int main(int argc, char *argv[])
 {
@@ -21,21 +22,39 @@ int main(int argc, char *argv[])
 	//Assignment header
 	cout << "Assignment #3-3, Jose Carlos Gomez, JoseCarlosGomez69@gmail.com" << endl;
 
-	string str = "";
-	char buff[256];
-	fgets(buff, 65, stdin); //Takes in no more than 65 chars into the buff array
-	//for(int i = 2; i < argc; i++){
-	//	strcat(buff, argv[i]);
-	//}
+	double z;
 
-	cout << buff << endl;
+	char buff[256]; // Used to hold user input
+	fgets(buff, 65, stdin); //Takes in no more than 65 chars into the buff array
+
+
+	//cout << buff << endl;
 
 	L = luaL_newstate(); // Assigns the lua state to the name L
 	luaL_openlibs(L); //Open lua libraries in the lua state L
 	
 	luaL_dofile(L, argv[1]); // Execute the lua file entered in as a command line argument
+	z = InfixToPostfix(buff);
+	cout << z << endl;
 
 	lua_close(L); //Close the Lua environment
 
 	return 0;
+}
+
+double InfixToPostfix(const char* str){
+
+	double z;
+
+	lua_getglobal(L, "InfixToPostfix");
+	lua_pushstring(L, str);
+	
+	//if(lua_pcall(L, 1, 1, 0) != 0)
+	//	error(L, "Error running InfixToPostfix: %s", lua_tostring(L, -1));
+	lua_call(L, 1, 1);
+
+	z = lua_tonumber(L, -1);
+	lua_pop(L, 1);
+	return z;
+
 }
