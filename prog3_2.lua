@@ -1,4 +1,4 @@
-return InfixToPostfix(str)
+
 
 function InfixToPostfix( str )
 	stack = {}
@@ -7,15 +7,15 @@ function InfixToPostfix( str )
 		if (tonumber(i) ~= nil) then
 			postfix = postfix .. i
 		else
-			if(i == "*" || i == "/") then
-				if(stack[#stack] == "+" || stack[#stack] == "-") then
+			if(i == "*" or i == "/") then
+				if(stack[#stack] == "+" or stack[#stack] == "-") then
 					table.insert(stack, i)
 				else
 					postfix = postfix .. i
 					table.remove(stack, i)
 				end
 			else
-				if(stack[#stack] == "+" || stack[#stack] == "-") then
+				if(stack[#stack] == "+" or stack[#stack] == "-") then
 					postfix = postfix .. i
 					table.remove(stack, i)
 				end
@@ -25,4 +25,3 @@ function InfixToPostfix( str )
 return postfix
 end
 
-return InfixToPostfix(str)
