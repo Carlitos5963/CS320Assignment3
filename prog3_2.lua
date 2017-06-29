@@ -22,7 +22,7 @@ function InfixToPostfix( str )
 			end
 		end
 	if next(stack) ~= nil then
-		postfix = postfix .. " " .. next(stack)
+		postfix = postfix .. " " .. table.remove(stack)
 		end
 	end
 	return postfix
