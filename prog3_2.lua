@@ -1,7 +1,7 @@
 
 function InfixToPostfix( str )
 
-	local stack = {}
+	stack = {}
 	postfix = ""
 	for i in string.gmatch(str, "%S+") do
 		if (tonumber(i) ~= nil) then
