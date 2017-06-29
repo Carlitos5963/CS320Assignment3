@@ -1,6 +1,4 @@
-local function InfixToPostfix( )
-
-local function InfixToPostfix( str )
+function InfixToPostfix( str )
 	stack = {}
 	postfix = ""
 	for i in string.gmatch(str, "%S+") do
@@ -21,6 +19,7 @@ local function InfixToPostfix( str )
 				end
 			end
 		end
+	return postfix
 	end
-return postfix
+io.write(postfix)
 end
