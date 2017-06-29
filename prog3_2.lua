@@ -21,10 +21,10 @@ function InfixToPostfix( str )
 				end
 			end
 		end
-	if next(stack) ~= nil then
-		postfix = postfix .. " " .. table.remove(stack)
+	if #stack ~= 0 then
+		for i in stack	
+		postfix = postfix .. " " .. stack[i]
 		end
 	end
 	return postfix
 end
-
