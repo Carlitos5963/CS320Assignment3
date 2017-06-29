@@ -34,6 +34,7 @@ function InfixToPostfix( str )
 	end
 	while(#stack ~= 0) do
 		postfix = postfix .. " " .. stack[#stack]
+		table.remove(stack)
 	end
 	return postfix
 end
