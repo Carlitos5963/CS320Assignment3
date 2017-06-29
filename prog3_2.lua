@@ -5,6 +5,7 @@ postfix = ""
 function InfixToPostfix(str)
 	for i in string.gmatch(str, "%S+") do
 		if (tonumber(i) ~= nil) then
+			print(i)
 			postfix = postfix .. i
 		else
 			if(i == "*" || i == "/") then
@@ -25,5 +26,3 @@ function InfixToPostfix(str)
 	
 return postfix
 end
-	
-	
