@@ -16,7 +16,7 @@ function InfixToPostfix( str )
 					table.insert(stack, i)
 				end
 			else
-				if(#stack == 0)
+				if(#stack == 0) then
 					table.insert(stack, i)
 				elseif(stack[#stack] == "+" or stack[#stack] == "-") then
 					postfix = postfix .. " " .. stack[#stack]
