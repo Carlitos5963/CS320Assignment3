@@ -22,3 +22,5 @@ local function InfixToPostfix( str )
 	end
 return postfix
 end
+
+InfixToPostfix(str)
