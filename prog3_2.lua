@@ -24,5 +24,5 @@ function InfixToPostfix( str )
 		end
 	end
 	
-print( postfix )
+return postfix
 end
