@@ -1,3 +1,5 @@
+InfixToPostfix = function() end
+
 function InfixToPostfix( str )
 	stack = {}
 	postfix = ""
