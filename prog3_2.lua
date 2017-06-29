@@ -12,7 +12,7 @@ function InfixToPostfix( str )
 					table.insert(stack, i)
 				else
 					postfix = postfix .. i
-					table.remove(stack, i)
+					table.remove(stack, stack[#stack])
 				end
 			else
 				if(stack[#stack] == "+" or stack[#stack] == "-") then
