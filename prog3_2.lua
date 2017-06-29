@@ -1,4 +1,5 @@
-InfixToPostfix = function() end
+function InfixToPostfix( str )
+end
 
 function InfixToPostfix( str )
 	stack = {}
