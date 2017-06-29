@@ -8,7 +8,7 @@ function InfixToPostfix( str )
 			postfix = postfix .. " " .. i
 		else
 			if(i == "*" or i == "/") then
-				if(stack[#stack] == "+" or stack[#stack] == "-") then
+				if(stack[#stack] == "+" or stack[#stack] == "-" or #stack == 0) then
 					table.insert(stack, i)
 				else
 					postfix = postfix .. " " .. stack[#stack]
@@ -16,7 +16,9 @@ function InfixToPostfix( str )
 					table.insert(stack, i)
 				end
 			else
-				if(stack[#stack] == "+" or stack[#stack] == "-") then
+				if(#stack == 0)
+					table.insert(stack, i)
+				elseif(stack[#stack] == "+" or stack[#stack] == "-") then
 					postfix = postfix .. " " .. stack[#stack]
 					table.remove(stack)
 					table.insert(stack, i)
