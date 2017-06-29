@@ -3,7 +3,7 @@ postfix = ""
 
 
 function InfixToPostfix(str)
-	for i in string.match(str, " ") do
+	for i in string.match(str, "%S+") do
 		if tonumber(i) ~= nil then
 			postfix = postfix .. i
 		else
