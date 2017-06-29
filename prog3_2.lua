@@ -23,7 +23,7 @@ function InfixToPostfix( str )
 		end
 	end
 	
-	postfix = postfix .. stack[1]
+	print(stack)
 return postfix
 end
 
