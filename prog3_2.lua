@@ -1,10 +1,9 @@
 
-function InfixToPostfix( str )
+local function InfixToPostfix( str )
 
 	stack = {}
 	postfix = ""
-	return "Hello there"
-	end
+
 	for i in string.gmatch(str, "%S+") do
 		if (tonumber(i) ~= nil) then
 			print(i)
