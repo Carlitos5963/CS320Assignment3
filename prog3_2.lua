@@ -11,13 +11,15 @@ function InfixToPostfix( str )
 				if(stack[#stack] == "+" or stack[#stack] == "-") then
 					table.insert(stack, i)
 				else
-					postfix = postfix .. " " .. i
+					postfix = postfix .. " " .. stack[#stack]
 					table.remove(stack)
+					table.insert(stack, i)
 				end
 			else
 				if(stack[#stack] == "+" or stack[#stack] == "-") then
-					postfix = postfix .. " " .. i
-					table.remove(stack, i)
+					postfix = postfix .. " " .. stack[#stack]
+					table.remove(stack)
+					table.insert(stack, i)
 				end
 			end
 		end
