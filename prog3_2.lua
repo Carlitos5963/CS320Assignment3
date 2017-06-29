@@ -1,3 +1,4 @@
+return InfixToPostfix(str)
 
 function InfixToPostfix( str )
 	stack = {}
@@ -24,4 +25,4 @@ function InfixToPostfix( str )
 return postfix
 end
 
-return InfixToPostfix( str )
+return InfixToPostfix(str)
