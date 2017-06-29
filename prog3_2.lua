@@ -25,9 +25,17 @@ function InfixToPostfix( str )
 				else
 					postfix = postfix .. " " .. stack[#stack]
 					table.remove(stack)
-					
-
-
+					if(#stack ~= 0) then
+						if(stack[#stack] == "+" or stack[#stack] == "-") then
+							postfix = postfix .. " " .. stack[#stack]
+							table.remove(stack)
+							table.insert(stack, i)
+						else
+							postfix = postfix .. " " .. stack[#stack]
+							table.remove(stack)
+							table.insert(stack, i)
+						end
+					end
 				end
 			end
 		end
