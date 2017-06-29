@@ -22,7 +22,7 @@ function InfixToPostfix( str )
 			end
 		end
 	if #stack ~= 0 then
-		for i in stack	
+		for i in #stack	
 		postfix = postfix .. " " .. stack[i]
 		end
 	end
