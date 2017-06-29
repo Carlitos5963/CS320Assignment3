@@ -2,7 +2,7 @@ local stack = {}
 postfix = ""
 
 
-function InfixToPostfix(str)
+function InfixToPostfix( str )
 	for i in string.gmatch(str, "%S+") do
 		if (tonumber(i) ~= nil) then
 			print(i)
@@ -24,5 +24,5 @@ function InfixToPostfix(str)
 		end
 	end
 	
-return postfix
+print( postfix )
 end
