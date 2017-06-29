@@ -4,7 +4,7 @@ postfix = ""
 
 function InfixToPostfix(str)
 	for i in string.match(str, "%S+") do
-		if tonumber(i) ~= nil then
+		if (tonumber(i) ~= nil) then
 			postfix = postfix .. i
 		else
 			if(i == "*" || i == "/") then
@@ -21,7 +21,7 @@ function InfixToPostfix(str)
 				end
 			end
 		end
-	end
+	
 return postfix
 end
 	
