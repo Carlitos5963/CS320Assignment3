@@ -22,8 +22,6 @@ function InfixToPostfix( str )
 			end
 		end
 	end
-	
-	print(stack)
 	return postfix
 end
 
