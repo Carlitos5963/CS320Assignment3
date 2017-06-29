@@ -1,5 +1,3 @@
-function InfixToPostfix( str )
-end
 
 function InfixToPostfix( str )
 	stack = {}
@@ -22,7 +20,8 @@ function InfixToPostfix( str )
 				end
 			end
 		end
-	return postfix
 	end
-io.write(postfix)
+return postfix
 end
+
+InfixToPostfix( str )
