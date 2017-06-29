@@ -24,4 +24,4 @@ function InfixToPostfix( str )
 return postfix
 end
 
-InfixToPostfix( str )
+return InfixToPostfix( str )
