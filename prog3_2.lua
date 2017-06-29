@@ -24,6 +24,6 @@ function InfixToPostfix( str )
 	end
 	
 	print(stack)
-return postfix
+	return postfix
 end
 
