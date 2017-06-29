@@ -2,7 +2,7 @@
 
 function InfixToPostfix( str )
 	stack = {}
-	postfix = " "
+	postfix = ""
 	for i in string.gmatch(str, "%S+") do
 		if (tonumber(i) ~= nil) then
 			postfix = postfix .. " " .. i
@@ -20,6 +20,9 @@ function InfixToPostfix( str )
 					table.remove(stack, i)
 				end
 			end
+		end
+	if next(stack) ~= nil then
+		postfix = postfix .. " " .. next(stack)
 		end
 	end
 	return postfix
