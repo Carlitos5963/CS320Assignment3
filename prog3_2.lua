@@ -1,11 +1,6 @@
 local function InfixToPostfix( str )
-
-	return "Hello there"
-	end
-end
 	stack = {}
 	postfix = ""
-
 	for i in string.gmatch(str, "%S+") do
 		if (tonumber(i) ~= nil) then
 			postfix = postfix .. i
@@ -25,6 +20,5 @@ end
 			end
 		end
 	end
-	
 return postfix
 end
