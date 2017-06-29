@@ -32,5 +32,8 @@ function InfixToPostfix( str )
 			end
 		end
 	end
+	while(#stack ~= 0) do
+		postfix = postfix .. " " .. stack[#stack]
+	end
 	return postfix
 end
